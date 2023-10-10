@@ -116,8 +116,8 @@ option {
   padding: 10px;
 }
 
-.backgroundFrom {
+.backgroundForm {
   padding: 150px 0;
-  background-image: url(pxfuel.jpg);
+  background-image: url(./assets/pxfuel.jpg);
   height: 100vh;
 }
