@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add movie</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>My IMDB</h1>
+    <nav class="navBar">
+      <a href="index.html">home</a>
+      <a href="#addMovie">AddMovie</a>
+    </nav>
+    <div class="backgroundFrom">
+      <section id="addMovie">
+        <h2>Movie Form</h2>
+        <form id="add-movie-form">
+          <label for="movie-image"
+            >Image URL:
+            <input
+              type="text"
+              id="movie-image"
+              placeholder="paste image url"
+              name="movie-image"
+              required
+          /></label>
+          <label for="movie-title"
+            >Title:
+            <input
+              type="text"
+              id="movie-title"
+              placeholder="movie title"
+              name="movie-title"
+              required
+          /></label>
+          <label for="movie-year"
+            >Year:
+            <input
+              type="number"
+              id="movie-year"
+              placeholder="released year"
+              name="movie-year"
+              required
+          /></label>
+          <label for="movie-rating"
+            >Rating:
+            <select
+              id="movie-rating"
+              name="movie-rating"
+              placeholder="rate the movie"
+              required
+            >
+              <option value="1">★</option>
+              <option value="2">★★</option>
+              <option value="3">★★★</option>
+              <option value="4">★★★★</option>
+              <option value="5">★★★★★</option>
+            </select></label
+          >
+
+          <button type="submit" id="submit">Add Movie</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

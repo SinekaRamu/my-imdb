@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+}
+
+body {
+  padding: 10px;
+  background-color: #000;
+}
+h1 {
+  padding-bottom: 20px;
+  color: rgb(245, 197, 24);
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+input,
+select {
+  width: 50%;
+  padding: 8px 10px;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+form label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+button {
+  background-color: #333;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #444;
+}
+option {
+  color: #000;
+}
+.navBar {
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-card {
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px #fff;
+}
+
+.movie-card img {
+  max-width: 100%;
+  height: 80%;
+  box-shadow: 0 0 2px #fff;
+}
+
+#rating {
+  color: #fff;
+}
+
+#addMovie {
+  margin: 0px auto;
+  padding: 20px;
+  width: 500px;
+  background-color: #1f1f1f;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px #ccc;
+}
+@media (max-width: 528px) {
+  #addMovie {
+    width: 300px;
+  }
+  form label {
+    flex-direction: column;
+  }
+  #add-movie-form {
+    padding: 10px;
+  }
+}
+#add-movie-form {
+  padding: 10px;
+}
+
+.backgroundFrom {
+  padding: 150px 0;
+  background-image: url(pxfuel.jpg);
+  height: 100vh;
+}
