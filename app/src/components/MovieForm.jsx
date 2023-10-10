@@ -33,6 +33,14 @@ const MovieForm = (props) => {
     <>
       <h2>Movie Form</h2>
       <form id="add-movie-form" onSubmit={handleSubmit}>
+        <FormInput
+          type="text"
+          label="Image Url :"
+          placeholder="paste image url"
+          name="image"
+          value={movie.image}
+          getChange={handleChange}
+        />
         <label htmlFor="movie-image">
           Image URL:
           <input
