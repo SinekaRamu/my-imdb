@@ -12,7 +12,8 @@ body {
   padding: 10px;
   background-color: #000;
 }
-h1 {
+h1,
+h2 {
   padding-bottom: 20px;
   text-align: center;
   color: rgb(245, 197, 24);
@@ -22,7 +23,9 @@ a {
   text-decoration: none;
   font-size: 20px;
 }
-
+a:hover {
+  color: rgb(245, 197, 24);
+}
 input,
 select {
   width: 50%;
@@ -44,15 +47,17 @@ form label {
   align-items: center;
   justify-content: space-between;
 }
+
 button {
-  background-color: #333;
-  border: none;
+  background-color: rgb(245, 197, 24);
+  color: #000;
   padding: 9px 15px;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 button:hover {
-  background-color: #444;
+  background-color: rgba(245, 197, 24, 0.8);
 }
 option {
   color: #000;
@@ -62,13 +67,23 @@ option {
   padding: 10px;
   display: flex;
   justify-content: space-around;
-  background-color: #1f1f1f;
+  background-color: #333;
   border-radius: 10px;
 }
 
 .search-container {
   text-align: center;
   margin-bottom: 20px;
+}
+#movie-search {
+  border-radius: 5px 0px 0px 5px;
+}
+#movie-search:focus {
+  outline: 2px solid rgb(245, 197, 24);
+}
+
+#search-button {
+  border-radius: 0px 5px 5px 0px;
 }
 .movie-cards {
   display: flex;
@@ -89,9 +104,17 @@ option {
   height: 80%;
   box-shadow: 0 0 2px #fff;
 }
-
-#rating {
+.movie-card h3 {
+  width: 20ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.star {
   color: #fff;
+}
+.gold {
+  color: rgb(245, 197, 24);
 }
 
 #addMovie {
@@ -99,7 +122,7 @@ option {
   padding: 20px;
   width: 500px;
   text-align: center;
-  background-color: #1f1f1f;
+  background-color: hwb(0 12% 88% / 0.942);
   border: 1px solid #ccc;
   box-shadow: 0 0 20px #ccc;
 }
@@ -114,12 +137,13 @@ option {
     padding: 10px;
   }
 }
-#add-movie-form {
-  padding: 10px;
-}
 
 .backgroundForm {
   padding: 150px 0;
   background-image: url(./assets/pxfuel.jpg);
   height: 100vh;
+}
+
+.form-button {
+  margin-top: 10px;
 }

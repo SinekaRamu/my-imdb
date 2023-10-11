@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import FormInput from "./FormInput";
 
 const MovieForm = (props) => {
   const { onAddMovie } = props;
   const [movie, setMovie] = useState({
-    id: "",
+    id: uuidv4(),
     image: "",
     title: "",
     year: "",
@@ -17,10 +19,6 @@ const MovieForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMovie((prevMovie) => {
-      [...prevMovie, (movie.id = new Date.getTime())];
-    });
-    console.log(movie);
     onAddMovie(movie);
     setMovie({
       image: "",
@@ -32,7 +30,7 @@ const MovieForm = (props) => {
   return (
     <>
       <h2>Movie Form</h2>
-      <form id="add-movie-form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <FormInput
           type="text"
           label="Image Url :"
@@ -87,11 +85,11 @@ const MovieForm = (props) => {
             onChange={handleChange}
             required
           >
-            <option value="★">1</option>
-            <option value="★★">2</option>
-            <option value="★★★">3</option>
-            <option value="★★★★">4</option>
-            <option value="★★★★★">5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </select>
         </label>
 

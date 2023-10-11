@@ -8,7 +8,7 @@
 
 Added navigation bar, that switch between home and addMovie page.
 
-## movieCCard
+## movieCard
 
 Created the movieCard ad=nd saved to local storage.
 

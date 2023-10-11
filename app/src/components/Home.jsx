@@ -1,27 +1,45 @@
+import MovieCard from "./Moviecard";
+import { useEffect, useState } from "react";
+
 const Home = (props) => {
   const { movies } = props;
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState(movies);
+
+  useEffect(() => {
+    setFilteredMovies(JSON.parse(localStorage.getItem("My-IMDB")) || []);
+  }, [movies]);
+
+  useEffect(() => {
+    const filtered = movies.filter((movie) =>
+      movie.title.toLowerCase().startsWith(searchTerm.toLowerCase())
+    );
+    if (!searchTerm) {
+      setFilteredMovies(movies);
+    }
+    setFilteredMovies(filtered);
+  }, [searchTerm]);
+  const handleSearch = () => {
+    console.log("clicked search");
+  };
   return (
     <>
       <div className="search-container">
-        <input type="text" id="movie-search" placeholder="Search for a movie" />
-        <button id="search-button">search</button>
+        <input
+          type="text"
+          className="movie-search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search by movie title..."
+        />
+        <button className="search-button" onClick={handleSearch}>
+          search
+        </button>
       </div>
       <div className="movie-cards">
-        <div className="movie-card">
-          <img
-            src="https://resizing.flixster.com/WjuuMiDmu89ljIvxWpGbCilfTqY=/300x300/v2/https://resizing.flixster.com/v7TV6NeSNV0aOWjXGyl5BI056yg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FjODIxZjUzLTY5OTEtNGRmOS1hMzc4LTg0MjAyOGI1OTFiNS53ZWJw"
-            alt="GRUDGE"
-          />
-          <h3>Movie title : GRUDGE</h3>
-          <p>release year : 2019</p>
-          <p>Rating: ★★★★★</p>
-        </div>
-        {movies.map((movie, index) => (
+        {filteredMovies.map((movie, index) => (
           <div className="movie-card" key={index}>
-            <img src={movie.image} alt={movie.title} />
-            <h3>{movie.title}</h3>
-            <p>Year: {movie.year}</p>
-            <p>Rating: {movie.rating}</p>
+            <MovieCard movie={movie} />
           </div>
         ))}
       </div>

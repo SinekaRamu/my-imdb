@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Home from "./components/Home";
 import MovieForm from "./components/MovieForm";
 import "./App.css";
+import { v4 as uuidv44 } from "uuid";
 
 function setToLocalStorage(movies) {
   localStorage.setItem("My-IMDB", JSON.stringify(movies));
@@ -35,11 +36,13 @@ function App() {
 
   useEffect(() => setMovies(getFromLocalStorage()), []);
   useEffect(() => {
-    setToLocalStorage(movies);
+    if (!movies) {
+      setToLocalStorage(movies);
+    }
   }, [movies]);
 
   function handleAddMovie(newMovie) {
-    const updatedMovies = [...movies, newMovie];
+    const updatedMovies = [{ id: uuidv44(), ...newMovie }, ...movies];
     setMovies(updatedMovies);
     setToLocalStorage(updatedMovies);
     setShowAddMovie(false);
