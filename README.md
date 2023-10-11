@@ -15,3 +15,11 @@ Created the movieCard ad=nd saved to local storage.
 ## movieForm
 
 while submitting the data, it push the movie to the home page as card.
+
+## creating responsivve grid
+
+```
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+```

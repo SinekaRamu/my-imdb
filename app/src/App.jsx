@@ -13,24 +13,7 @@ function getFromLocalStorage() {
 }
 
 function App() {
-  const moviesList = [
-    {
-      id: 1,
-      image:
-        "https://m.media-amazon.com/images/M/MV5BODBiMTcwMDktZGUxZi00MjhiLTgwMTQtOTc4MmViZjg5YTVhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-      title: "Escape Room",
-      year: "2019",
-      rating: "★★★★★",
-    },
-    {
-      id: 2,
-      image:
-        "https://i.pinimg.com/736x/ba/77/bb/ba77bb07526900709dadaecc967aae14.jpg",
-      title: "INSIDIOUS",
-      year: "2017",
-      rating: "★★★★★",
-    },
-  ];
+  const moviesList = [];
   const [movies, setMovies] = useState(moviesList);
   const [showAddMovie, setShowAddMovie] = useState(false);
 
