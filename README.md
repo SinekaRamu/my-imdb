@@ -23,3 +23,7 @@ while submitting the data, it push the movie to the home page as card.
   .cards { grid-template-columns: repeat(2, 1fr); }
 }
 ```
+
+## Router
+
+Navigation funtionality using router library

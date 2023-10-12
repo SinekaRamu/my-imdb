@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import MovieForm from "./components/MovieForm";
 import "./App.css";
 import { v4 as uuidv44 } from "uuid";
+import NavigationBar from "./components/NavigationBar";
 
 function setToLocalStorage(movies) {
   localStorage.setItem("My-IMDB", JSON.stringify(movies));
@@ -13,8 +14,7 @@ function getFromLocalStorage() {
 }
 
 function App() {
-  const moviesList = [];
-  const [movies, setMovies] = useState(moviesList);
+  const [movies, setMovies] = useState([]);
   const [showAddMovie, setShowAddMovie] = useState(false);
 
   useEffect(() => setMovies(getFromLocalStorage()), []);
@@ -34,14 +34,7 @@ function App() {
   return (
     <>
       <h1>My iMDb</h1>
-      <div className="navBar">
-        <a href="#" onClick={() => setShowAddMovie(false)}>
-          Home
-        </a>
-        <a href="#" onClick={() => setShowAddMovie(true)}>
-          Add Movie
-        </a>
-      </div>
+      <NavigationBar setShowAddMovie={setShowAddMovie} />
       <main>
         {showAddMovie ? (
           <div className="backgroundForm">

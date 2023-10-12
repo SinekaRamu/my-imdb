@@ -26,28 +26,6 @@ a {
 a:hover {
   color: rgb(245, 197, 24);
 }
-input,
-select {
-  width: 50%;
-  padding: 8px 10px;
-  color: #000;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-label {
-  margin-bottom: 10px;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-form label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 button {
   background-color: rgb(245, 197, 24);
   color: #000;
@@ -59,6 +37,28 @@ button {
 button:hover {
   background-color: rgba(245, 197, 24, 0.8);
 }
+input,
+select {
+  padding: 8px 10px;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+select {
+  width: 265px;
+}
+label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+form label {
+  justify-content: space-between;
+}
+
 option {
   color: #000;
 }
@@ -86,22 +86,22 @@ option {
   border-radius: 0px 5px 5px 0px;
 }
 .movie-cards {
-  margin-top: 45px;
-  max-width: 1920px;
+  padding-top: 35px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   gap: 40px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 @media (max-width: 1520px) {
   .movie-cards {
-    width: 900px;
+    width: 965px;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (max-width: 991px) {
   .movie-cards {
-    width: 750px;
+    width: 624px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -113,15 +113,21 @@ option {
 }
 .movie-card {
   width: 300px;
+  height: 500px;
   padding: 10px;
   border: 1px solid #1f1f1f;
   box-shadow: 0 0 10px #fff;
+  transition: transform 0.2s;
 }
-
+.movie-card:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
 .movie-card img {
-  max-width: 100%;
-  height: 83%;
-  box-shadow: 0 0 2px #fff;
+  max-width: 278px;
+  height: 392px;
+  box-shadow: 0 0 2px #ccc;
 }
 .movie-card h3 {
   width: 20ch;
@@ -152,8 +158,8 @@ option {
   form label {
     flex-direction: column;
   }
-  #add-movie-form {
-    padding: 10px;
+  form input {
+    display: block;
   }
 }
 

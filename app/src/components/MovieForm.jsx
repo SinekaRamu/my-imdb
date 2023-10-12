@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import FormInput from "./FormInput";
 
 const MovieForm = (props) => {
   const { onAddMovie } = props;
@@ -31,14 +30,6 @@ const MovieForm = (props) => {
     <>
       <h2>Movie Form</h2>
       <form onSubmit={handleSubmit}>
-        <FormInput
-          type="text"
-          label="Image Url :"
-          placeholder="paste image url"
-          name="image"
-          value={movie.image}
-          getChange={handleChange}
-        />
         <label htmlFor="movie-image">
           Image URL:
           <input
