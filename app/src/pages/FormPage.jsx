@@ -1,17 +1,11 @@
 import Layout from "../components/Layout";
 import MovieForm from "../components/MovieForm";
 
-const FormPage = () => {
-  function handleAddMovie(newMovie) {
-    const updatedMovies = [{ id: uuidv44(), ...newMovie }, ...movies];
-    // setMovies(updatedMovies);
-    console.log("movies", updatedMovies);
-    // setToLocalStorage(updatedMovies);
-  }
+const FormPage = ({ onAddMovie }) => {
   return (
     <Layout title="MovieForm">
       <div className="backgroundForm">
-        <MovieForm onAddMovie={handleAddMovie} />
+        <MovieForm onAddMovie={onAddMovie} />
       </div>
     </Layout>
   );

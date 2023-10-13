@@ -1,11 +1,9 @@
 import Layout from "../components/Layout";
-import SearchBar from "../components/SearchBar";
-
-const IndexPage = () => {
+import Home from "../components/Home";
+const IndexPage = ({ movies }) => {
   return (
     <Layout title="MyIMDb">
-      <SearchBar />
-      {/* <Home /> */}
+      <Home movies={movies} />
     </Layout>
   );
 };

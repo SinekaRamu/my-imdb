@@ -173,3 +173,22 @@ option {
 .form-button {
   margin-top: 10px;
 }
+
+.pagination {
+  margin-top: 25px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pagination button {
+  background-color: rgb(245, 197, 24);
+  color: black;
+  padding: 10px 15px;
+  border: none;
+}
+
+.pagination button:disabled {
+  background-color: #ccc; /* Gray background for disabled buttons */
+  cursor: not-allowed;
+}

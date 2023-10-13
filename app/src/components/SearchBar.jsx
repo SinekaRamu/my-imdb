@@ -1,8 +1,5 @@
-import { useState } from "react";
-
 const SearchBar = (props) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  //   const { setSearchTerm, searchTerm } = props;
+  const { setSearchTerm, searchTerm } = props;
   const handleSearch = () => {
     console.log("clicked search");
   };
